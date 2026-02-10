@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель - Аксессуары ручной работы</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="call.html">Позвонить нам</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="admin.html">Админ панель</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="call.html">Позвонить нам</a></li>
+            <li><a href="delivery.html">Доставка</a></li>
+            <li><a href="account.html">Личный кабинет</a></li>
+            <li><a href="cart.html">Корзина</a></li>
+            <li><a href="admin.html" class="active">Админ панель</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <div class="container">            
+            <div class="admin-container">
+                <div class="admin-welcome">
+                    <h2>Панель управления магазином</h2>
+                    <p>Добро пожаловать в админ панель интернет-магазина аксессуаров ручной работы. Здесь вы можете управлять заказами, товарами, пользователями и настройками магазина.</p>
+                    
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div>
+                                <h3 id="total-orders">0</h3>
+                                <p>Всего заказов</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3 id="pending-orders">0</h3>
+                                <p>В обработке</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3 id="completed-orders">0</h3>
+                                <p>Выполнено</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-ruble-sign"></i>
+                            <div>
+                                <h3 id="total-revenue">0 ₽</h3>
+                                <p>Общая выручка</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-tabs">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="orders">История заказов</button>
+                    </div>
+                    
+                    <!-- Вкладка История заказов -->
+                    <div id="orders-tab" class="tab-content active">
+                        <div class="tab-header">
+                            <h3>История заказов</h3>
+                            <div class="filter-orders">
+                                <select id="order-filter">
+                                    <option value="all">Все заказы</option>
+                                    <option value="pending">В обработке</option>
+                                    <option value="processing">В процессе</option>
+                                    <option value="shipped">Отправлены</option>
+                                    <option value="delivered">Доставлены</option>
+                                    <option value="cancelled">Отменены</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="orders-table-container">
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID заказа</th>
+                                        <th>Дата</th>
+                                        <th>Покупатель</th>
+                                        <th>Товары</th>
+                                        <th>Сумма</th>
+                                        <th>Статус</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orders-table-body">
+                                    <!-- Заказы будут загружены через JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div id="no-orders" class="empty-message" style="display: none;">
+                            <i class="fas fa-clipboard-list fa-3x"></i>
+                            <h3>Заказов пока нет</h3>
+                            <p>Когда клиенты будут делать заказы, они появятся здесь</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Вкладка Управление товарами -->
+                    <div id="products-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h3>Управление товарами</h3>
+                            <button class="btn" id="add-product-btn">Добавить товар</button>
+                        </div>
+                        
+                        <div class="products-management">
+                            <p>В этом разделе вы можете добавлять, редактировать и удалять товары из каталога.</p>
+                            <p>Для управления товарами требуется подключение к базе данных.</p>
+                            
+                            <div class="placeholder-content">
+                                <i class="fas fa-boxes fa-4x"></i>
+                                <h4>Управление товарами</h4>
+                                <p>Функционал управления товарами находится в разработке.</p>
+                                <p>Здесь можно будет добавлять новые товары, редактировать существующие, изменять цены и управлять категориями.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Вкладка Настройки -->
+                    <div id="settings-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h3>Настройки магазина</h3>
+                        </div>
+                        
+                        <div class="settings-management">
+                            <form id="admin-settings-form">
+                                <div class="form-group">
+                                    <label for="shop-name">Название магазина</label>
+                                    <input type="text" id="shop-name" value="Аксессуары ручной работы">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="shop-email">Email для уведомлений</label>
+                                    <input type="email" id="shop-email" value="admin@accessories.ru">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="delivery-cost">Стоимость доставки (₽)</label>
+                                    <input type="number" id="delivery-cost" value="500">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="min-order">Минимальная сумма заказа (₽)</label>
+                                    <input type="number" id="min-order" value="1000">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="order-statuses">Статусы заказов</label>
+                                    <textarea id="order-statuses" rows="4">Обрабатывается, В процессе, Отправлен, Доставлен, Отменен</textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" id="shop-active" checked>
+                                        Магазин активен
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn">Сохранить настройки</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Магазин аксессуаров ручной работы с 2010 года</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Email: info@accessories.ru</p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Аксессуары ручной работы. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Переключение вкладок
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.admin-tabs .tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Убираем активный класс у всех кнопок и вкладок
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Добавляем активный класс текущей кнопке и вкладке
+                    this.classList.add('active');
+                    document.getElementById(tabId + '-tab').classList.add('active');
+                });
+            });
+            
+            // Загрузка и отображение статистики
+            function loadStatistics() {
+                const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                
+                // Общая статистика
+                const totalOrders = orders.length;
+                const pendingOrders = orders.filter(order => order.status === 'pending').length;
+                const completedOrders = orders.filter(order => order.status === 'delivered').length;
+                const totalRevenue = orders.reduce((sum, order) => sum + order.total, 0);
+                
+                document.getElementById('total-orders').textContent = totalOrders;
+                document.getElementById('pending-orders').textContent = pendingOrders;
+                document.getElementById('completed-orders').textContent = completedOrders;
+                document.getElementById('total-revenue').textContent = totalRevenue.toLocaleString('ru-RU') + ' ₽';
+            }
+            
+            // Загрузка и отображение заказов
+            function loadOrders(filter = 'all') {
+                const ordersTableBody = document.getElementById('orders-table-body');
+                const noOrdersMessage = document.getElementById('no-orders');
+                
+                let orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                
+                // Фильтрация заказов
+                if (filter !== 'all') {
+                    orders = orders.filter(order => order.status === filter);
+                }
+                
+                if (orders.length === 0) {
+                    ordersTableBody.innerHTML = '';
+                    noOrdersMessage.style.display = 'block';
+                    return;
+                }
+                
+                noOrdersMessage.style.display = 'none';
+                ordersTableBody.innerHTML = '';
+                
+                // Сортируем заказы по дате (новые сначала)
+                orders.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                orders.forEach(order => {
+                    const row = document.createElement('tr');
+                    
+                    // Получаем информацию о пользователе
+                    const userData = JSON.parse(localStorage.getItem('user') || '{}');
+                    const userName = userData.name || 'Гость';
+                    const userEmail = userData.email || 'Не указан';
+                    
+                    // Подсчитываем количество товаров
+                    const itemsCount = order.items.reduce((sum, item) => sum + item.quantity, 0);
+                    
+                    // Определяем класс для статуса
+                    const statusClass = order.status || 'pending';
+                    const statusText = getStatusText(statusClass);
+                    
+                    row.innerHTML = `
+                        <td>#${order.id}</td>
+                        <td>${order.date}</td>
+                        <td>
+                            <strong>${userName}</strong><br>
+                            <small>${userEmail}</small>
+                        </td>
+                        <td>${itemsCount} товар(ов)</td>
+                        <td>${order.total} ₽</td>
+                        <td>
+                            <span class="status-badge ${statusClass}">${statusText}</span>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn view-btn" data-id="${order.id}" title="Просмотреть">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn edit-btn" data-id="${order.id}" title="Изменить статус">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn delete-btn" data-id="${order.id}" title="Удалить">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    `;
+                    
+                    ordersTableBody.appendChild(row);
+                });
+                
+                // Добавляем обработчики для кнопок действий
+                addOrderActionHandlers();
+            }
+            
+            function getStatusText(status) {
+                const statusMap = {
+                    'pending': 'Обрабатывается',
+                    'processing': 'В процессе',
+                    'shipped': 'Отправлен',
+                    'delivered': 'Доставлен',
+                    'cancelled': 'Отменен'
+                };
+                return statusMap[status] || status;
+            }
+            
+            function addOrderActionHandlers() {
+                // Просмотр заказа
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const orderId = this.getAttribute('data-id');
+                        const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                        const order = orders.find(o => o.id == orderId);
+                        
+                        if (order) {
+                            let itemsList = '';
+                            order.items.forEach(item => {
+                                itemsList += `${item.name} - ${item.quantity} × ${item.price} ₽ = ${item.quantity * item.price} ₽\n`;
+                            });
+                            
+                            alert(`Детали заказа #${order.id}\n\n` +
+                                  `Дата: ${order.date}\n` +
+                                  `Статус: ${getStatusText(order.status)}\n` +
+                                  `Общая сумма: ${order.total} ₽\n\n` +
+                                  `Товары:\n${itemsList}`);
+                        }
+                    });
+                });
+                
+                // Изменение статуса заказа
+                document.querySelectorAll('.edit-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const orderId = this.getAttribute('data-id');
+                        const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                        const orderIndex = orders.findIndex(o => o.id == orderId);
+                        
+                        if (orderIndex !== -1) {
+                            const newStatus = prompt('Введите новый статус заказа (pending, processing, shipped, delivered, cancelled):', orders[orderIndex].status);
+                            
+                            if (newStatus && ['pending', 'processing', 'shipped', 'delivered', 'cancelled'].includes(newStatus)) {
+                                orders[orderIndex].status = newStatus;
+                                localStorage.setItem('orders', JSON.stringify(orders));
+                                
+                                // Перезагружаем таблицу
+                                const currentFilter = document.getElementById('order-filter').value;
+                                loadOrders(currentFilter);
+                                loadStatistics();
+                                
+                                alert('Статус заказа обновлен!');
+                            }
+                        }
+                    });
+                });
+                
+                // Удаление заказа
+                document.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const orderId = this.getAttribute('data-id');
+                        
+                        if (confirm('Вы уверены, что хотите удалить этот заказ?')) {
+                            let orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                            orders = orders.filter(o => o.id != orderId);
+                            localStorage.setItem('orders', JSON.stringify(orders));
+                            
+                            // Перезагружаем таблицу
+                            const currentFilter = document.getElementById('order-filter').value;
+                            loadOrders(currentFilter);
+                            loadStatistics();
+                            
+                            alert('Заказ удален!');
+                        }
+                    });
+                });
+            }
+            
+            // Фильтрация заказов
+            document.getElementById('order-filter').addEventListener('change', function() {
+                loadOrders(this.value);
+            });
+            
+            // Форма настроек
+            document.getElementById('admin-settings-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Настройки сохранены! (В реальном приложении здесь будет отправка на сервер)');
+            });
+            
+            // Кнопка добавления товара
+            document.getElementById('add-product-btn').addEventListener('click', function() {
+                alert('Функция добавления товара находится в разработке. В реальном приложении здесь будет форма для добавления нового товара.');
+            });
+            
+            // Инициализация
+            loadStatistics();
+            loadOrders();
+        });
+    </script>
+</body>
+</html>

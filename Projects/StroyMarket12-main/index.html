@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СтройМаркет — Главная</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="index">
+    <button class="floating-btn pulse" data-target="gift">🛒</button>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a class="logo" href="index.html">
+                    <div class="logo-icon">С</div>
+                    <span class="logo-text">СтройМаркет</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                    <a href="certificate.html" class="nav-link">Сертификат</a>
+                    <a href="login.html" class="nav-link">Авторизация</a>
+                    <a href="admin.html" class="nav-link">Администрация</a>
+                    <a class="order-btn" href="certificate.html">Заказать</a>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-slide active slide-bg-1">
+            <div class="hero-content">
+                <h1 class="hero-title">СтройМаркет</h1>
+                <p class="hero-subtitle">Широкий ассортимент строительных материалов и инструментов по лучшим ценам</p>
+                <a class="hero-btn" href="catalog.html">Заказать</a>
+            </div>
+        </div>
+        <div class="hero-slide slide-bg-2">
+            <div class="hero-content">
+                <h1 class="hero-title">Профессиональное качество</h1>
+                <p class="hero-subtitle">Только сертифицированные материалы и инструменты от ведущих производителей</p>
+                <a class="hero-btn" href="catalog.html">Каталог</a>
+            </div>
+        </div>
+        <div class="hero-slide slide-bg-3">
+            <div class="hero-content">
+                <h1 class="hero-title">Доставка по всей России</h1>
+                <p class="hero-subtitle">Быстрая и надежная доставка в любую точку страны</p>
+                <a class="hero-btn" href="contacts.html">Узнать больше</a>
+            </div>
+        </div>
+        <div class="slide-indicators">
+            <button class="slide-indicator active"></button>
+            <button class="slide-indicator"></button>
+            <button class="slide-indicator"></button>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="about" class="section texture-wood">
+            <h2 class="section-title">О компании «СтройМаркет»</h2>
+            <div class="about-section depth-effect">
+                <div class="about-content">
+                    <p class="about-text">
+                        Мы — один из ведущих поставщиков строительных материалов и инструментов в регионе. <br>
+                        Наша компания была основана в 2010 году и с тех пор помогает нашим клиентам воплощать в жизнь их проекты.
+                    </p>
+                    <div class="border-top" style="border-top: 2px solid var(--amber-light); padding-top: 2rem; margin-top: 2rem;">
+                        <h3 class="section-title" style="font-size: 1.5rem; text-align: left;">Наша миссия</h3>
+                        <p class="about-text">
+                            Сделать строительство и ремонт доступными для каждого.
+                            Мы предлагаем качественные материалы по конкурентным ценам и предоставляем профессиональные консультации.
+                        </p>
+                    </div>
+                    
+                    <div class="advantages-grid">
+                        <div class="advantage-card floating-element">
+                            <div class="advantage-icon">🚚</div>
+                            <h3 class="advantage-title">Быстрая доставка</h3>
+                            <p class="advantage-desc">Доставляем заказы в день оформления по городу и в течение 1-3 дней по области</p>
+                        </div>
+                        <div class="advantage-card floating-element">
+                            <div class="advantage-icon">⭐</div>
+                            <h3 class="advantage-title">Качество товаров</h3>
+                            <p class="advantage-desc">Работаем только с проверенными поставщиками и даем гарантию на всю продукцию</p>
+                        </div>
+                        <div class="advantage-card floating-element">
+                            <div class="advantage-icon">💰</div>
+                            <h3 class="advantage-title">Выгодные цены</h3>
+                            <p class="advantage-desc">Прямые поставки от производителей позволяют предлагать низкие цены</p>
+                        </div>
+                        <div class="advantage-card floating-element">
+                            <div class="advantage-icon">🔄</div>
+                            <h3 class="advantage-title">Легкий возврат</h3>
+                            <p class="advantage-desc">30 дней на принятия решения, даже если товар вам не подошел</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="section popular-products">
+            <h2 class="section-title">Популярные товары</h2>
+            <div class="products-grid">
+                <div class="product-card depth-effect">
+                    <div style="position: relative;">
+                        <img src="../stroy_market/assets/img/image 13-no-bg-preview (carve.photos).png" alt="Дрель ударная BOSCH GBH 2-26 DFR" class="product-image">
+                        <div class="product-tag">Инструменты</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Дрель ударная BOSCH GBH 2-26 DFR</h3>
+                        <div class="product-price">8 499 ₽</div>
+                        <button class="product-order-btn" data-id="bosch-drill">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card depth-effect">
+                    <div style="position: relative;">
+                        <img src="../stroy_market/assets/img/pwWJjNzD7FUU7RH08V-qRpQdbWvGLBLijzfoyxNXQcq73Xb_On-no-bg-preview (carve.photos).png" alt="Краска водоэмульсионная белая" class="product-image">
+                        <div class="product-tag">Материалы</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Краска водоэмульсионная белая</h3>
+                        <div class="product-price">1 850 ₽</div>
+                        <button class="product-order-btn" data-id="paint-white">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card depth-effect">
+                    <div style="position: relative;">
+                        <img src="../stroy_market/assets/img/i-no-bg-preview (carve.photos) (1).png" alt="Уровень лазерный 360 градусов" class="product-image">
+                        <div class="product-tag">Инструменты</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Уровень лазерный 360 градусов</h3>
+                        <div class="product-price">5 990 ₽</div>
+                        <button class="product-order-btn" data-id="laser-level">Заказать</button>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:1.5rem;">
+                <a class="cta-primary" href="catalog.html">Открыть весь каталог</a>
+            </div>
+        </section>
+
+        <section id="gift" class="section">
+            <h2 class="section-title">Подарочный сертификат</h2>
+            <div class="gift-section texture-concrete">
+                <div class="gift-layout">
+                    <div class="gift-card depth-effect">
+                        <div class="gift-icon">🎁</div>
+                        <h3 class="gift-title">Подарочный сертификат</h3>
+                        <p class="gift-subtitle">Магазин «СтройМаркет»</p>
+                        <div class="gift-amount">3000 ₽</div>
+                        <p class="gift-code">Код: ST-2025-01-456</p>
+                        <p class="gift-code">Срок действия: 12 месяцев</p>
+                        <a class="hero-btn" href="certificate.html">Оформить</a>
+                    </div>
+                    <div class="order-form">
+                        <h3 class="section-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1rem;">Как получить?</h3>
+                        <p class="about-text" style="margin-bottom:1rem;">Выберите номинал и оформите заказ на отдельной странице сертификата.</p>
+                        <a class="order-btn" href="certificate.html">Перейти к покупке</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a class="logo" href="index.html">
+                        <div class="logo-icon" style="background: var(--white); color: var(--amber-dark);">С</div>
+                        <span class="logo-text">СтройМаркет</span>
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--amber-light);">
+                        Лучшие строительные материалы и инструменты по выгодным ценам.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="certificate.html">Сертификат</a></li>
+                        <li><a href="login.html">Авторизация</a></li>
+                        <li><a href="favorites.html">Избранные</a></li>
+                        <li><a href="admin.html">Администрация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li>📍 г. Москва, ул. Строительная, д. 15</li>
+                        <li>📞 +7 (495) 123-45-67</li>
+                        <li>✉️ info@stroy-market.ru</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Режим работы</h3>
+                    <ul class="footer-links">
+                        <li>Пн-Пт: 9:00–20:00</li>
+                        <li>Сб: 10:00–18:00</li>
+                        <li>Вс: 11:00–16:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 СтройМаркет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

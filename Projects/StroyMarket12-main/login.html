@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СтройМаркет — Вход</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .auth-section {
+            padding: 3rem 0;
+            min-height: 70vh;
+        }
+        
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--amber-light);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            background: var(--amber-light);
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 1.25rem;
+            border: none;
+            background: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--amber-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+        
+        .auth-tab.active {
+            background: var(--white);
+            border-bottom-color: var(--terracotta);
+        }
+        
+        .auth-content {
+            padding: 2.5rem;
+        }
+        
+        .auth-form {
+            display: block;
+        }
+        
+        .auth-form.hidden {
+            display: none;
+        }
+        
+        .password-wrapper {
+            position: relative;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--amber-dark);
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        
+        .forgot-link {
+            color: var(--terracotta);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+        
+        .auth-submit-btn {
+            width: 100%;
+            background: var(--terracotta);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+        }
+        
+        .auth-submit-btn:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+        }
+        
+        .auth-info {
+            background: var(--amber-light);
+            padding: 1.5rem 2.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-info h3 {
+            color: var(--amber-dark);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits-list li {
+            padding: 0.5rem 0;
+            color: var(--gray-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Message */
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        @media (max-width: 768px) {
+            .auth-container {
+                margin: 0 1rem;
+            }
+            
+            .auth-content {
+                padding: 1.5rem;
+            }
+            
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body data-page="login">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a class="logo" href="index.html">
+                    <div class="logo-icon">С</div>
+                    <span class="logo-text">СтройМаркет</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                    <a href="certificate.html" class="nav-link">Сертификат</a>
+                    <a href="login.html" class="nav-link">Авторизация</a>
+                    <a href="admin.html" class="nav-link">Администрация</a>
+                    <a class="order-btn" href="certificate.html">Заказать</a>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-hero layout-muted">
+        <div class="container">
+            <h1>Вход в систему</h1>
+            <p>Войдите в свой аккаунт для доступа к избранному и истории заказов</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="auth-section">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="showForm('login')">Вход</button>
+                    <button class="auth-tab" onclick="showForm('register')">Регистрация</button>
+                </div>
+                
+                <div class="auth-content">
+                    <!-- Сообщение -->
+                    <div class="message" id="message" style="display:none;">
+                        Добро пожаловать! Вы успешно вошли в систему.
+                    </div>
+                    
+                    <!-- Форма входа -->
+                    <form class="auth-form" id="loginForm" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" name="email" required placeholder="Введите ваш email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Пароль</label>
+                            <div class="password-wrapper">
+                                <input type="password" class="form-input" id="loginPassword" required placeholder="Введите пароль">
+                                <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">👁</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span>Запомнить меня</span>
+                            </label>
+                            <a href="#" class="forgot-link" onclick="showForgotPassword()">Забыли пароль?</a>
+                        </div>
+                        
+                        <button type="submit" class="auth-submit-btn">Войти</button>
+                        
+                        <div style="text-align: center; margin-top: 1rem;">
+                            <p>Нет аккаунта? <a href="#" onclick="showForm('register')">Зарегистрируйтесь</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Форма регистрации -->
+                    <form class="auth-form hidden" id="registerForm" onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label class="form-label">Имя</label>
+                            <input type="text" class="form-input" name="name" required placeholder="Введите ваше имя">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" name="email" required placeholder="Введите ваш email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Телефон</label>
+                            <input type="tel" class="form-input" name="phone" placeholder="+7 (___) ___-__-__">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Пароль</label>
+                            <div class="password-wrapper">
+                                <input type="password" class="form-input" id="regPassword" required placeholder="Придумайте пароль">
+                                <button type="button" class="password-toggle" onclick="togglePassword('regPassword')">👁</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Подтвердите пароль</label>
+                            <div class="password-wrapper">
+                                <input type="password" class="form-input" id="regConfirmPassword" required placeholder="Повторите пароль">
+                                <button type="button" class="password-toggle" onclick="togglePassword('regConfirmPassword')">👁</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agreement" required>
+                                <span>Я согласен с <a href="#">правилами сайта</a></span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="auth-submit-btn">Зарегистрироваться</button>
+                        
+                        <div style="text-align: center; margin-top: 1rem;">
+                            <p>Уже есть аккаунт? <a href="#" onclick="showForm('login')">Войдите</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="auth-info">
+                    <h3>Преимущества регистрации:</h3>
+                    <ul class="benefits-list">
+                        <li>📌 Сохранение избранных товаров</li>
+                        <li>📝 История заказов</li>
+                        <li>🎁 Специальные предложения</li>
+                        <li>🚚 Отслеживание доставки</li>
+                        <li>💳 Быстрое оформление заказов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a class="logo" href="index.html">
+                        <div class="logo-icon" style="background: var(--white); color: var(--amber-dark);">С</div>
+                        <span class="logo-text">СтройМаркет</span>
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--amber-light);">
+                        Лучшие строительные материалы и инструменты по выгодным ценам.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="certificate.html">Сертификат</a></li>
+                        <li><a href="login.html">Авторизация</a></li>
+                        <li><a href="favorites.html">Избранные</a></li>
+                        <li><a href="admin.html">Администрация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li>📍 г. Москва, ул. Строительная, д. 15</li>
+                        <li>📞 +7 (495) 123-45-67</li>
+                        <li>✉️ info@stroy-market.ru</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Режим работы</h3>
+                    <ul class="footer-links">
+                        <li>Пн-Пт: 9:00–20:00</li>
+                        <li>Сб: 10:00–18:00</li>
+                        <li>Вс: 11:00–16:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 СтройМаркет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Переключение форм
+        function showForm(formType) {
+            document.getElementById('loginForm').classList.toggle('hidden', formType !== 'login');
+            document.getElementById('registerForm').classList.toggle('hidden', formType !== 'register');
+            
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.classList.toggle('active', 
+                    (formType === 'login' && tab.textContent.includes('Вход')) ||
+                    (formType === 'register' && tab.textContent.includes('Регистрация'))
+                );
+            });
+            
+            return false;
+        }
+        
+        // Показать/скрыть пароль
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+        
+        // Обработка входа
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            // Здесь была бы проверка с сервером
+            // Для демо просто показываем сообщение
+            const message = document.getElementById('message');
+            message.textContent = 'Добро пожаловать! Вы успешно вошли в систему.';
+            message.style.display = 'block';
+            message.style.background = '#d4edda';
+            message.style.color = '#155724';
+            
+            // Сохраняем в localStorage что пользователь авторизован
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userName', 'Иван Иванов');
+            
+            // Через 2 секунды переходим на главную
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+            
+            return false;
+        }
+        
+        // Обработка регистрации
+        function handleRegister(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Пароли не совпадают!');
+                return false;
+            }
+            
+            // Здесь была бы отправка на сервер
+            const message = document.getElementById('message');
+            message.textContent = 'Регистрация успешна! Теперь вы можете войти в систему.';
+            message.style.display = 'block';
+            message.style.background = '#d4edda';
+            message.style.color = '#155724';
+            
+            // Переключаем на форму входа
+            setTimeout(() => {
+                showForm('login');
+                message.style.display = 'none';
+            }, 3000);
+            
+            return false;
+        }
+        
+        // Восстановление пароля
+        function showForgotPassword() {
+            const email = prompt('Введите ваш email для восстановления пароля:');
+            if (email) {
+                alert(`Инструкции по восстановлению пароля отправлены на ${email}`);
+            }
+            return false;
+        }
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

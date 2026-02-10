@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Аксессуары ручной работы</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="call.html">Позвонить нам</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="admin.html">Админ панель</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="call.html">Позвонить нам</a></li>
+            <li><a href="delivery.html">Доставка</a></li>
+            <li><a href="account.html" class="active">Личный кабинет</a></li>
+            <li><a href="cart.html">Корзина</a></li>
+            <li><a href="admin.html">Админ панель</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <div class="container">            
+            <div class="account-container">
+                <div class="account-sidebar">
+                    <div class="user-info">
+                        <div class="avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 id="username">Гость</h3>
+                        <p id="user-email">Не авторизован</p>
+                    </div>
+                    
+                    <ul class="account-menu">
+                        <li class="active"><a href="#" data-tab="profile"><i class="fas fa-user"></i> Профиль</a></li>
+                        <li><a href="#" data-tab="favorites"><i class="fas fa-heart"></i> Избранное</a></li>
+                        <li><a href="#" data-tab="orders"><i class="fas fa-shopping-bag"></i> Мои заказы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="account-content">
+                    <!-- Профиль -->
+                    <div id="profile-tab" class="tab-content active">
+                        <h2>Мой профиль</h2>
+                        
+                        <div class="profile-form">
+                            <form id="registration-form">
+                                <div class="form-group">
+                                    <label for="name">Имя</label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="password">Пароль</label>
+                                    <input type="password" id="password" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Телефон</label>
+                                    <input type="tel" id="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="address">Адрес</label>
+                                    <textarea id="address" rows="3"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn">Зарегистрироваться</button>
+                            </form>
+                            
+                            <div id="registration-success" class="success-message" style="display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Вы успешно зарегистрированы!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Избранное -->
+                    <div id="favorites-tab" class="tab-content">
+                        <h2>Избранное</h2>
+                        
+                        <div id="favorites-list" class="products-grid">
+                            <!-- Товары из избранного будут загружены через JavaScript -->
+                        </div>
+                        
+                        <div id="empty-favorites" class="empty-message" style="display: none;">
+                            <i class="fas fa-heart fa-3x"></i>
+                            <h3>В избранном пока пусто</h3>
+                            <p>Добавляйте товары в избранное, нажимая на сердечко в каталоге</p>
+                            <a href="catalog.html" class="btn">Перейти в каталог</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Мои заказы -->
+                    <div id="orders-tab" class="tab-content">
+                        <h2>Мои заказы</h2>
+                        
+                        <div id="orders-list">
+                            <!-- Заказы будут загружены через JavaScript -->
+                        </div>
+                        
+                        <div id="empty-orders" class="empty-message" style="display: none;">
+                            <i class="fas fa-shopping-bag fa-3x"></i>
+                            <h3>У вас пока нет заказов</h3>
+                            <p>Сделайте свой первый заказ!</p>
+                            <a href="catalog.html" class="btn">Перейти в каталог</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Настройки -->
+                    <div id="settings-tab" class="tab-content">
+                        <h2>Настройки</h2>
+                        
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label for="notifications">Уведомления</label>
+                                <select id="notifications">
+                                    <option value="all">Все уведомления</option>
+                                    <option value="important">Только важные</option>
+                                    <option value="none">Не получать</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="theme">Тема оформления</label>
+                                <select id="theme">
+                                    <option value="light">Светлая</option>
+                                    <option value="dark">Темная</option>
+                                    <option value="auto">Авто</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="newsletter">
+                                    Подписаться на рассылку
+                                </label>
+                            </div>
+                            
+                            <button id="save-settings" class="btn">Сохранить настройки</button>
+                            <button id="logout" class="btn btn-secondary">Выйти</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Магазин аксессуаров ручной работы с 2010 года</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Email: info@accessories.ru</p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Аксессуары ручной работы. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Переключение между вкладками
+            const tabLinks = document.querySelectorAll('.account-menu a');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Убираем активный класс у всех вкладок
+                    tabLinks.forEach(l => l.parentElement.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Добавляем активный класс текущей вкладке
+                    this.parentElement.classList.add('active');
+                    document.getElementById(tabId + '-tab').classList.add('active');
+                });
+            });
+            
+            // Форма регистрации
+            const registrationForm = document.getElementById('registration-form');
+            const successMessage = document.getElementById('registration-success');
+            
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    
+                    // Сохраняем данные пользователя
+                    const userData = {
+                        name: name,
+                        email: email,
+                        phone: document.getElementById('phone').value,
+                        address: document.getElementById('address').value
+                    };
+                    
+                    localStorage.setItem('user', JSON.stringify(userData));
+                    
+                    // Обновляем информацию в сайдбаре
+                    document.getElementById('username').textContent = name;
+                    document.getElementById('user-email').textContent = email;
+                    
+                    // Показываем сообщение об успехе
+                    successMessage.style.display = 'flex';
+                    
+                    // Скрываем сообщение через 5 секунд
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                });
+            }
+            
+            // Загрузка избранного
+            function loadFavorites() {
+                const favoritesContainer = document.getElementById('favorites-list');
+                const emptyMessage = document.getElementById('empty-favorites');
+                
+                const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                
+                if (favorites.length === 0) {
+                    favoritesContainer.style.display = 'none';
+                    emptyMessage.style.display = 'block';
+                    return;
+                }
+                
+                favoritesContainer.style.display = 'grid';
+                emptyMessage.style.display = 'none';
+                favoritesContainer.innerHTML = '';
+                
+                favorites.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='images/product1.png'">
+                        <h3>${product.name}</h3>
+                        <p class="price">${product.price} ₽</p>
+                        <div class="product-actions">
+                            <button class="btn btn-secondary remove-from-favorites" data-id="${product.id}">Удалить</button>
+                            <button class="btn add-to-cart-from-fav" data-id="${product.id}">В корзину</button>
+                        </div>
+                    `;
+                    favoritesContainer.appendChild(productCard);
+                });
+            }
+            
+            // Обработчики для кнопок в избранном
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-from-favorites')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                    
+                    favorites = favorites.filter(product => product.id !== productId);
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                    
+                    loadFavorites();
+                }
+                
+                if (e.target.classList.contains('add-to-cart-from-fav')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                    
+                    const product = favorites.find(p => p.id === productId);
+                    
+                    if (product && !cart.some(item => item.id === productId)) {
+                        cart.push({
+                            ...product,
+                            quantity: 1
+                        });
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        
+                        alert('Товар добавлен в корзину!');
+                    }
+                }
+            });
+            
+            // Загрузка заказов
+            function loadOrders() {
+                const ordersContainer = document.getElementById('orders-list');
+                const emptyMessage = document.getElementById('empty-orders');
+                
+                const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                
+                if (orders.length === 0) {
+                    ordersContainer.style.display = 'none';
+                    emptyMessage.style.display = 'block';
+                    return;
+                }
+                
+                ordersContainer.style.display = 'block';
+                emptyMessage.style.display = 'none';
+                ordersContainer.innerHTML = '';
+                
+                orders.reverse().forEach(order => {
+                    const orderElement = document.createElement('div');
+                    orderElement.className = 'order-card';
+                    orderElement.innerHTML = `
+                        <div class="order-header">
+                            <div>
+                                <h4>Заказ #${order.id}</h4>
+                                <p class="order-date">${order.date}</p>
+                            </div>
+                            <span class="order-status ${order.status}">${getStatusText(order.status)}</span>
+                        </div>
+                        <div class="order-items">
+                            ${order.items.map(item => `
+                                <div class="order-item">
+                                    <span>${item.name}</span>
+                                    <span>${item.quantity} × ${item.price} ₽ = ${item.quantity * item.price} ₽</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="order-total">
+                            <span>Итого:</span>
+                            <span class="total-price">${order.total} ₽</span>
+                        </div>
+                    `;
+                    ordersContainer.appendChild(orderElement);
+                });
+            }
+            
+            function getStatusText(status) {
+                const statusMap = {
+                    'pending': 'Обрабатывается',
+                    'processing': 'В обработке',
+                    'shipped': 'Отправлен',
+                    'delivered': 'Доставлен',
+                    'cancelled': 'Отменен'
+                };
+                return statusMap[status] || status;
+            }
+            
+            // Выход
+            document.getElementById('logout').addEventListener('click', function() {
+                localStorage.removeItem('user');
+                document.getElementById('username').textContent = 'Гость';
+                document.getElementById('user-email').textContent = 'Не авторизован';
+                alert('Вы вышли из аккаунта');
+            });
+            
+            // Загрузка данных пользователя
+            const userData = JSON.parse(localStorage.getItem('user') || '{}');
+            if (userData.name) {
+                document.getElementById('username').textContent = userData.name;
+                document.getElementById('user-email').textContent = userData.email;
+                document.getElementById('name').value = userData.name || '';
+                document.getElementById('email').value = userData.email || '';
+                document.getElementById('phone').value = userData.phone || '';
+                document.getElementById('address').value = userData.address || '';
+            }
+            
+            // Загрузка настроек
+            const settings = JSON.parse(localStorage.getItem('settings') || '{}');
+            if (settings.notifications) {
+                document.getElementById('notifications').value = settings.notifications;
+            }
+            if (settings.theme) {
+                document.getElementById('theme').value = settings.theme;
+            }
+            if (settings.newsletter !== undefined) {
+                document.getElementById('newsletter').checked = settings.newsletter;
+            }
+            
+            // Загрузка данных при открытии вкладок
+            loadFavorites();
+            loadOrders();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - FreshMarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>FreshMarket</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="delivery.html" class="nav-link">Доставка</a>
+                    <a href="contacts.html" class="nav-link active">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="account.html#favorites" class="icon-link1">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="fav-count">0</span>
+                    </a>
+                    <a href="account.html#cart" class="icon-link2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
+                    </a>
+                    <a href="account.html" class="icon-link">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="contacts-page">
+        <div class="container">
+            <h1 class="page-title">Контакты</h1>
+            <div class="page-content">
+                <div class="contact-info-section">
+                    <h2><i class="fas fa-info-circle"></i> Наши контакты</h2>
+                    <p>Мы всегда готовы помочь вам с выбором продуктов, ответить на вопросы о доставке или принять заказ.</p>
+                    
+                    <div class="contact-info-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Адрес офиса и склада</h3>
+                                <p>Москва, ул. Продовольственная, 15</p>
+                                <p>БЦ "Фреш Тауэр", 3 этаж</p>
+                                <small>Ближайшее метро: Продуктовая</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Телефоны</h3>
+                                <p><strong>Заказы и доставка:</strong> +7 (495) 123-45-67</p>
+                                <p><strong>Отдел качества:</strong> +7 (495) 123-45-68</p>
+                                <p><strong>Поставщикам:</strong> +7 (495) 123-45-69</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Электронная почта</h3>
+                                <p><strong>Общие вопросы:</strong> info@freshmarket.ru</p>
+                                <p><strong>Заказы:</strong> orders@freshmarket.ru</p>
+                                <p><strong>Рекламации:</strong> quality@freshmarket.ru</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Время работы</h3>
+                                <p><strong>Колл-центр:</strong> ежедневно 8:00-22:00</p>
+                                <p><strong>Самовывоз:</strong> Пн-Пт 9:00-20:00, Сб-Вс 10:00-18:00</p>
+                                <p><strong>Доставка:</strong> ежедневно 9:00-21:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-section">
+                    <h2><i class="fas fa-comments"></i> Форма обратной связи</h2>
+                    <p>Оставьте ваше сообщение, и мы ответим вам в ближайшее время.</p>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Электронная почта *</label>
+                            <input type="email" id="email" name="email" required placeholder="example@email.ru">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Тема сообщения</label>
+                            <select id="subject" name="subject">
+                                <option value="">Выберите тему</option>
+                                <option value="question">Вопрос по заказу</option>
+                                <option value="quality">Качество товаров</option>
+                                <option value="delivery">Вопросы доставки</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Ваше сообщение *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Опишите ваш вопрос или проблему..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <label for="agree">Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности</label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i> Отправить сообщение
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="form-message" style="display: none;"></div>
+                </div>
+                <div class="faq-section">
+                    <h2><i class="fas fa-question-circle"></i> Часто задаваемые вопросы</h2>
+                    
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Как быстро осуществляется доставка?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Доставка осуществляется в день заказа при оформлении до 16:00. Время доставки зависит от вашего района и загруженности курьеров. Точное время вам согласует оператор при подтверждении заказа.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Можно ли изменить заказ после оформления?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Да, вы можете изменить заказ до момента его передачи курьеру. Для этого позвоните по телефону +7 (495) 123-45-67 или напишите в онлайн-чат на сайте.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Что делать, если привезли не тот товар?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Если вы обнаружили ошибку в заказе, пожалуйста, сообщите об этом курьеру или позвоните в колл-центр в течение 2 часов после получения заказа. Мы заменим товар или вернем деньги за ошибочную позицию.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Есть ли минимальная сумма заказа?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Минимальная сумма заказа для бесплатной доставки - 1500 рублей. Для заказов на меньшую сумму действует плата за доставку 250 рублей. Самовывоз доступен без ограничений по сумме.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Как происходит оплата?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Мы принимаем наличные при получении, банковские карты (Visa, MasterCard, МИР), а также онлайн-оплату через Сбербанк Онлайн, Тинькофф и другие банки.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-section">
+                    <h2><i class="fas fa-map"></i> Как нас найти</h2>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-info">
+                                <h3>Склад и пункт самовывоза FreshMarket</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> <strong>Адрес:</strong> Москва, ул. Продовольственная, 15</p>
+                                <p><i class="fas fa-subway"></i> <strong>Метро:</strong> Продуктовая (выход №3)</p>
+                                <p><i class="fas fa-bus"></i> <strong>Автобусы:</strong> №12, 45, 78 до остановки "Продовольственная"</p>
+                                <p><i class="fas fa-car"></i> <strong>Парковка:</strong> Бесплатная парковка на территории (1 час)</p>
+                                <p><i class="fas fa-clock"></i> <strong>Часы работы:</strong> Пн-Пт 9:00-20:00, Сб-Вс 10:00-18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contacts-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>FreshMarket</h3>
+                    <p>Свежие продукты с доставкой на дом. Качество, которое вы заслуживаете.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Меню</h3>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="about.html">О нас</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Помощь</h3>
+                    <a href="#">Частые вопросы</a>
+                    <a href="#">Возврат товара</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Конфиденциальность</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Продовольственная, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@freshmarket.ru</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 8:00-22:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMarket. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.menu-toggle').addEventListener('click', function() {
+                document.querySelector('.nav').classList.toggle('active');
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if(target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+ 
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                            item.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                            item.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                        }
+                    });
+                    
+                    answer.classList.toggle('active');
+                    if (answer.classList.contains('active')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                
+                    const name = document.getElementById('name').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    const agree = document.getElementById('agree').checked;
+                    
+                    if (!name || !phone || !email || !message) {
+                        showMessage('Пожалуйста, заполните все обязательные поля', 'error');
+                        return;
+                    }
+                    
+                    if (!agree) {
+                        showMessage('Необходимо согласие на обработку персональных данных', 'error');
+                        return;
+                    }
+                    showMessage('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.', 'success');
+                    contactForm.reset();
+                
+                });
+            }
+            
+            function showMessage(text, type) {
+                formMessage.textContent = text;
+                formMessage.className = type;
+                formMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

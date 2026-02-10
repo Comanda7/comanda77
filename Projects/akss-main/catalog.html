@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Аксессуары ручной работы</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Хэдер (такой же как на главной) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="call.html">Позвонить нам</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="admin.html">Админ панель</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html" class="active">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="call.html">Позвонить нам</a></li>
+            <li><a href="delivery.html">Доставка</a></li>
+            <li><a href="account.html">Личный кабинет</a></li>
+            <li><a href="cart.html">Корзина</a></li>
+            <li><a href="admin.html">Админ панель</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <div class="container">            
+            <div class="catalog-container">
+                <!-- Фильтры -->
+                <aside class="filters">
+                    <h3>Фильтры</h3>
+                    <div class="filter-group">
+                        <h4>Цена</h4>
+                        <div class="price-range">
+                            <input type="range" id="price-min" min="0" max="10000" value="0">
+                            <input type="range" id="price-max" min="0" max="10000" value="10000">
+                            <div class="price-values">
+                                <span id="min-price-value">0 ₽</span>
+                                <span id="max-price-value">10000 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Категория</h4>
+                        <select id="category-filter">
+                            <option value="all">Все категории</option>
+                            <option value="premium">Для волос</option>
+                            <option value="classic">Для одежды</option>
+                            <option value="modern">Бижутерия</option>
+                            <option value="exclusive">Прочее</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Сортировка</h4>
+                        <select id="sort-by">
+                            <option value="default">По умолчанию</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="name-asc">Название: А-Я</option>
+                            <option value="name-desc">Название: Я-А</option>
+                        </select>
+                    </div>
+                    
+                    <button id="apply-filters" class="btn">Применить фильтры</button>
+                    <button id="reset-filters" class="btn btn-secondary">Сбросить фильтры</button>
+                </aside>
+                
+                <!-- Сетка товаров -->
+                <section class="products-section">
+                    <div class="products-grid" id="products-container">
+                        <!-- Товары будут загружены через JavaScript -->
+                    </div>
+                    
+                    <div class="pagination">
+                        <button id="prev-page" class="btn btn-secondary">Назад</button>
+                        <span id="page-info">Страница 1 из 10</span>
+                        <button id="next-page" class="btn btn-secondary">Вперед</button>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="delivery-link">
+                <a href="delivery.html" class="btn btn-large">Оформить доставку</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер (такой же как на главной) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Магазин аксессуаров ручной работы с 2010 года</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Email: info@accessories.ru</p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Аксессуары ручной работы. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>

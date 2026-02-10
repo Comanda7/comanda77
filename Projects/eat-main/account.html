@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - FreshMarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>FreshMarket</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="delivery.html" class="nav-link">Доставка</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="#favorites" class="icon-link1">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">0</span>
+                    </a>
+                    <a href="#cart" class="icon-link2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+                    <a href="#account" class="icon-link active">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Личный кабинет -->
+    <section class="account">
+        <div class="container">
+            <h1 class="page-title">Личный кабинет</h1>
+            
+            <div class="account-layout">
+                <!-- Левая панель - навигация -->
+                <div class="account-sidebar">
+                    <div class="user-profile-card">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-info">
+                            <h3 class="user-name">Александр Иванов</h3>
+                            <p class="user-email">alex@example.com</p>
+                            <div class="user-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Заказов</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">850</span>
+                                    <span class="stat-label">Бонусов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <nav class="account-menu">
+                        <a href="#account" class="account-menu-item active">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Профиль</span>
+                        </a>
+                        <a href="#cart" class="account-menu-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Корзина</span>
+                            <span class="menu-badge" id="cart-count-menu">0</span>
+                        </a>
+                        <a href="#favorites" class="account-menu-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Избранное</span>
+                            <span class="menu-badge" id="favorites-count">0</span>
+                        </a>
+                        <a href="#addresses" class="account-menu-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Адреса доставки</span>
+                        </a>
+                        <a href="#" class="account-menu-item logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Выйти</span>
+                        </a>
+                    </nav>
+                </div>
+                
+                <!-- Правая панель - контент -->
+                <div class="account-content">
+                    
+                    <!-- Профиль -->
+                    <div id="account" class="account-section active">
+                        <div class="section-header">
+                            <h2><i class="fas fa-user-circle"></i> Мой профиль</h2>
+                            <p>Управление вашей личной информацией</p>
+                        </div>
+                        
+                        <div class="profile-edit">
+                            <form id="profile-form" class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Имя</label>
+                                        <input type="text" id="name" value="Александр" placeholder="Ваше имя">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastname">Фамилия</label>
+                                        <input type="text" id="lastname" value="Иванов" placeholder="Ваша фамилия">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" value="alex@example.com" placeholder="Ваш email">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Телефон</label>
+                                    <input type="tel" id="phone" value="+7 (912) 345-67-89" placeholder="Ваш телефон">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="birthdate">Дата рождения</label>
+                                    <input type="date" id="birthdate" value="1990-05-15">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Пол</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="gender" value="male" checked>
+                                            <span class="radio-custom"></span>
+                                            Мужской
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="gender" value="female">
+                                            <span class="radio-custom"></span>
+                                            Женский
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                                    <button type="button" class="btn btn-secondary">Отмена</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Корзина -->
+                    <div id="cart" class="account-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-shopping-cart"></i> Корзина</h2>
+                            <p>Товары, которые вы выбрали для покупки</p>
+                        </div>
+                        
+                        <div id="cart-items" class="cart-items">
+                            <div class="empty-state" id="cart-empty">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>Корзина пуста</h3>
+                                <p>Добавьте товары из каталога, чтобы оформить заказ</p>
+                                <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-summary">
+                            <div class="summary-header">Итог заказа</div>
+                            <div class="summary-row">
+                                <span>Товары</span>
+                                <span id="cart-subtotal">0 руб.</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Доставка</span>
+                                <span id="cart-delivery">0 руб.</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Итого к оплате</span>
+                                <span id="cart-total">0 руб.</span>
+                            </div>
+                            <button id="checkout-btn" class="btn btn-primary btn-large" disabled>
+                                <i class="fas fa-credit-card"></i> Оформить заказ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Избранное -->
+                    <div id="favorites" class="account-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-heart"></i> Избранное</h2>
+                            <p>Товары, которые вам понравились</p>
+                        </div>
+                        
+                        <div id="favorites-items" class="favorites-grid">
+                            <div class="empty-state" id="favorites-empty">
+                                <i class="fas fa-heart"></i>
+                                <h3>В избранном пока нет товаров</h3>
+                                <p>Добавляйте товары в избранное, чтобы вернуться к ним позже</p>
+                                <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Мои заказы -->
+                    <div id="orders" class="account-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-clipboard-list"></i> Мои заказы</h2>
+                            <p>История ваших покупок</p>
+                        </div>
+                        
+                        <div class="orders-filter">
+                            <button class="filter-btn active">Все заказы</button>
+                            <button class="filter-btn">Доставленные</button>
+                            <button class="filter-btn">В обработке</button>
+                            <button class="filter-btn">Отмененные</button>
+                        </div>
+                        
+                        <div class="orders-list">
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-id">
+                                        <strong>Заказ #12345</strong>
+                                        <span class="order-date">15 октября 2023</span>
+                                    </div>
+                                    <span class="order-status status-delivered">Доставлен</span>
+                                </div>
+                                <div class="order-products">
+                                    <div class="order-product">
+                                        <div class="product-info">
+                                            <span class="product-name">Яблоки Голден, 1 кг</span>
+                                            <span class="product-quantity">×1</span>
+                                        </div>
+                                        <span class="product-price">250 руб.</span>
+                                    </div>
+                                    <div class="order-product">
+                                        <div class="product-info">
+                                            <span class="product-name">Молоко Простоквашино, 1 л</span>
+                                            <span class="product-quantity">×2</span>
+                                        </div>
+                                        <span class="product-price">190 руб.</span>
+                                    </div>
+                                    <div class="order-product">
+                                        <div class="product-info">
+                                            <span class="product-name">Хлеб Бородинский, 500 г</span>
+                                            <span class="product-quantity">×1</span>
+                                        </div>
+                                        <span class="product-price">65 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Итого:</span>
+                                        <strong>505 руб.</strong>
+                                    </div>
+                                    <button class="btn btn-secondary">Повторить заказ</button>
+                                </div>
+                            </div>
+                            
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-id">
+                                        <strong>Заказ #12344</strong>
+                                        <span class="order-date">10 октября 2023</span>
+                                    </div>
+                                    <span class="order-status status-processing">В обработке</span>
+                                </div>
+                                <div class="order-products">
+                                    <div class="order-product">
+                                        <div class="product-info">
+                                            <span class="product-name">Курица охлажденная, 1.5 кг</span>
+                                            <span class="product-quantity">×1</span>
+                                        </div>
+                                        <span class="product-price">450 руб.</span>
+                                    </div>
+                                    <div class="order-product">
+                                        <div class="product-info">
+                                            <span class="product-name">Рис Японский, 1 кг</span>
+                                            <span class="product-quantity">×2</span>
+                                        </div>
+                                        <span class="product-price">360 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Итого:</span>
+                                        <strong>810 руб.</strong>
+                                    </div>
+                                    <button class="btn btn-secondary">Отменить заказ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Адреса доставки -->
+                    <!-- Раздел адресов в account.html -->
+                    <div id="addresses" class="account-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-map-marker-alt"></i> Мои адреса</h2>
+                            <p>Управление адресами доставки</p>
+                        </div>
+                        
+                        <!-- Сообщение, если адресов нет -->
+                        <div id="addresses-empty" class="empty-state" style="display: none;">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Нет сохраненных адресов</h3>
+                            <p>Добавьте ваш первый адрес для быстрой доставки</p>
+                        </div>
+                        
+                        <!-- Список адресов -->
+                        <div id="addresses-list" class="addresses-grid"></div>
+                        
+                        <!-- Кнопка добавления адреса -->
+                        <div class="form-actions" style="margin-top: 30px;">
+                            <button id="add-address-btn" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Добавить новый адрес
+                            </button>
+                        </div>
+                        
+                        <div id="address-modal" class="address-modal">
+                        <div class="address-modal-overlay"></div>
+                        <div class="address-modal-content">
+                            <button class="address-modal-close"><i class="fas fa-times"></i></button>
+                            <div class="address-modal-body">
+                                <form id="address-form">
+                                    <h3 id="modal-title">Добавить новый адрес</h3>
+                                    <input type="hidden" id="address-id" value="">
+                                    
+                                    <div class="address-form-group">
+                                        <label for="address-name">Название адреса *</label>
+                                        <input type="text" id="address-name" required 
+                                            placeholder="Например: Дом, Работа, Родители">
+                                    </div>
+                                    
+                                    <div class="address-form-row">
+                                        <div class="address-form-group">
+                                            <label for="address-city">Город *</label>
+                                            <input type="text" id="address-city" required 
+                                                placeholder="Москва">
+                                        </div>
+                                        <div class="address-form-group">
+                                            <label for="address-street">Улица *</label>
+                                            <input type="text" id="address-street" required 
+                                                placeholder="ул. Продовольственная">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="address-form-row">
+                                        <div class="address-form-group">
+                                            <label for="address-house">Дом *</label>
+                                            <input type="text" id="address-house" required 
+                                                placeholder="15">
+                                        </div>
+                                        <div class="address-form-group">
+                                            <label for="address-apartment">Квартира/Офис</label>
+                                            <input type="text" id="address-apartment" 
+                                                placeholder="25">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="address-form-group">
+                                        <label for="address-entrance">Подъезд</label>
+                                        <input type="text" id="address-entrance" 
+                                            placeholder="3">
+                                    </div>
+                                    
+                                    <div class="address-form-group">
+                                        <label for="address-floor">Этаж</label>
+                                        <input type="text" id="address-floor" 
+                                            placeholder="5">
+                                    </div>
+                                    
+                                    <div class="address-form-group">
+                                        <label for="address-intercom">Домофон</label>
+                                        <input type="text" id="address-intercom" 
+                                            placeholder="25К1234">
+                                    </div>
+                                    
+                                    <div class="address-form-group">
+                                        <label for="address-comment">Комментарий для курьера</label>
+                                        <textarea id="address-comment" rows="3" 
+                                                placeholder="Например: позвонить за 10 минут, оставить у двери"></textarea>
+                                    </div>
+                                    
+                                    <div class="address-form-checkbox">
+                                        <input type="checkbox" id="address-default">
+                                        <label for="address-default">Сделать основным адресом доставки</label>
+                                    </div>
+                                    
+                                    <div class="address-form-actions">
+                                        <button type="button" class="btn btn-secondary address-modal-cancel">Отмена</button>
+                                        <button type="submit" class="btn btn-primary">Сохранить адрес</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>FreshMarket</h3>
+                    <p>Свежие продукты с доставкой на дом. Качество, которое вы заслуживаете.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Меню</h3>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="about.html">О нас</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Помощь</h3>
+                    <a href="#">Частые вопросы</a>
+                    <a href="#">Возврат товара</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Конфиденциальность</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Продовольственная, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@freshmarket.ru</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 8:00-22:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMarket. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <script src="catalog.js"></script>
+    <script src="account.js"></script>
+   <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav').classList.toggle('active');
+    });
+    document.getElementById('profile-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Изменения сохранены успешно!');
+    });
+    document.querySelector('.logout').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Вы уверены, что хотите выйти?')) {
+            alert('Вы успешно вышли из аккаунта');
+            window.location.href = 'index.html';
+        }
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Аксессуары ручной работы</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="call.html">Позвонить нам</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="admin.html">Админ панель</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="call.html">Позвонить нам</a></li>
+            <li><a href="delivery.html">Доставка</a></li>
+            <li><a href="account.html">Личный кабинет</a></li>
+            <li><a href="cart.html" class="active">Корзина</a></li>
+            <li><a href="admin.html">Админ панель</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <div class="container">            
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h2>Ваша корзина</h2>
+                    <p id="cart-count">Товаров: 0</p>
+                </div>
+                
+                <div id="cart-items" class="cart-items">
+                    <!-- Товары из корзины будут загружены через JavaScript -->
+                </div>
+                
+                <div id="empty-cart" class="empty-message" style="display: block;">
+                    <i class="fas fa-shopping-cart fa-3x"></i>
+                    <h3>Ваша корзина пуста</h3>
+                    <p>Добавляйте товары в корзину, чтобы оформить заказ</p>
+                    <a href="catalog.html" class="btn">Перейти в каталог</a>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Товары:</span>
+                        <span id="items-total">0 ₽</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Доставка:</span>
+                        <span id="delivery-cost">500 ₽</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Итого к оплате:</span>
+                        <span id="total-cost">500 ₽</span>
+                    </div>
+                    
+                    <a id="checkout-btn"></a>
+                    
+                    <div id="checkout-success" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Доставка успешно оформлена! Ваш заказ передан в обработку.</p>
+                    </div>
+                    
+                    <div class="cart-actions">
+                        <a href="catalog.html" class="btn btn-secondary">Продолжить покупки</a>
+                        <button id="clear-cart" class="btn btn-secondary">Очистить корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Магазин аксессуаров ручной работы с 2010 года</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Email: info@accessories.ru</p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Аксессуары ручной работы. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Загрузка корзины
+            function loadCart() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                const emptyCartMessage = document.getElementById('empty-cart');
+                const cartCountElement = document.getElementById('cart-count');
+                const itemsTotalElement = document.getElementById('items-total');
+                const totalCostElement = document.getElementById('total-cost');
+                const checkoutBtn = document.getElementById('checkout-btn');
+                
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                
+                if (cart.length === 0) {
+                    cartItemsContainer.style.display = 'none';
+                    emptyCartMessage.style.display = 'block';
+                    cartCountElement.textContent = 'Товаров: 0';
+                    itemsTotalElement.textContent = '0 ₽';
+                    totalCostElement.textContent = '500 ₽';
+                    checkoutBtn.disabled = true;
+                    return;
+                }
+                
+                cartItemsContainer.style.display = 'block';
+                emptyCartMessage.style.display = 'none';
+                cartItemsContainer.innerHTML = '';
+                
+                let itemsTotal = 0;
+                let totalQuantity = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    itemsTotal += itemTotal;
+                    totalQuantity += item.quantity;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}" onerror="this.src='images/product1.png'">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3>${item.name}</h3>
+                            <p class="price">${item.price} ₽</p>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        </div>
+                        <div class="cart-item-total">
+                            <span>${itemTotal} ₽</span>
+                        </div>
+                        <div class="cart-item-remove">
+                            <button class="remove-btn" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                const deliveryCost = 500;
+                const totalCost = itemsTotal + deliveryCost;
+                
+                cartCountElement.textContent = `Товаров: ${totalQuantity}`;
+                itemsTotalElement.textContent = `${itemsTotal} ₽`;
+                totalCostElement.textContent = `${totalCost} ₽`;
+                checkoutBtn.disabled = false;
+            }
+            
+            // Изменение количества товаров
+            document.addEventListener('click', function(e) {
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                
+                if (e.target.classList.contains('plus') || e.target.parentElement.classList.contains('plus')) {
+                    const button = e.target.classList.contains('plus') ? e.target : e.target.parentElement;
+                    const productId = parseInt(button.getAttribute('data-id'));
+                    
+                    const itemIndex = cart.findIndex(item => item.id === productId);
+                    if (itemIndex !== -1) {
+                        cart[itemIndex].quantity++;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        loadCart();
+                    }
+                }
+                
+                if (e.target.classList.contains('minus') || e.target.parentElement.classList.contains('minus')) {
+                    const button = e.target.classList.contains('minus') ? e.target : e.target.parentElement;
+                    const productId = parseInt(button.getAttribute('data-id'));
+                    
+                    const itemIndex = cart.findIndex(item => item.id === productId);
+                    if (itemIndex !== -1 && cart[itemIndex].quantity > 1) {
+                        cart[itemIndex].quantity--;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        loadCart();
+                    }
+                }
+                
+                if (e.target.classList.contains('remove-btn') || e.target.parentElement.classList.contains('remove-btn')) {
+                    const button = e.target.classList.contains('remove-btn') ? e.target : e.target.parentElement;
+                    const productId = parseInt(button.getAttribute('data-id'));
+                    
+                    const updatedCart = cart.filter(item => item.id !== productId);
+                    localStorage.setItem('cart', JSON.stringify(updatedCart));
+                    loadCart();
+                }
+            });
+            
+            // Очистка корзины
+            document.getElementById('clear-cart').addEventListener('click', function() {
+                if (confirm('Вы уверены, что хотите очистить корзину?')) {
+                    localStorage.removeItem('cart');
+                    loadCart();
+                }
+            });
+            
+            // Оформление доставки
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                
+                if (cart.length === 0) {
+                    alert('Корзина пуста!');
+                    return;
+                }
+                
+                // Создаем заказ
+                const order = {
+                    id: Date.now(),
+                    date: new Date().toLocaleString('ru-RU'),
+                    items: [...cart],
+                    total: calculateTotal(),
+                    status: 'pending'
+                };
+                
+                // Сохраняем заказ в историю
+                let orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                orders.push(order);
+                localStorage.setItem('orders', JSON.stringify(orders));
+                
+                // Очищаем корзину
+                localStorage.removeItem('cart');
+                
+                // Показываем сообщение об успехе
+                document.getElementById('checkout-success').style.display = 'flex';
+                
+                // Обновляем отображение корзины
+                loadCart();
+                
+                // Скрываем сообщение через 5 секунд
+                setTimeout(() => {
+                    document.getElementById('checkout-success').style.display = 'none';
+                }, 5000);
+            });
+            
+            function calculateTotal() {
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                const itemsTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                return itemsTotal + 500; // + доставка
+            }
+            
+            // Загружаем корзину при загрузке страницы
+            loadCart();
+        });
+    </script>
+</body>
+</html>

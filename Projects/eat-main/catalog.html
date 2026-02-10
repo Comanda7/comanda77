@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продуктов - FreshMarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>FreshMarket</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link active">Каталог</a>
+                    <a href="index.html#about-section" class="nav-link">О нас</a>
+                    <a href="index.html#delivery-section" class="nav-link">Доставка</a>
+                    <a href="index.html#contacts-section" class="nav-link">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="account.html#favorites" class="icon-link1">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="fav-count">0</span>
+                    </a>
+                    <a href="account.html#cart" class="icon-link2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
+                    </a>
+                    <a href="account.html" class="icon-link">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="catalog">
+        <div class="container">
+            <h1 class="page-title">Каталог продуктов</h1>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Категория:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">Все категории</option>
+                        <option value="ready-food">Готовая еда</option>
+                        <option value="sweets">Сладости и десерты</option>
+                        <option value="vegetables">Овощи, фрукты, ягоды и зелень</option>
+                        <option value="meat">Мясо, птица</option>
+                        <option value="dairy">Молочные продукты, яйца</option>
+                        <option value="bakery">Хлеб и выпечка</option>
+                        <option value="fish">Рыба и морепродукты</option>
+                        <option value="beverages">Напитки</option>
+                        <option value="grocery">Бакалея</option>
+                        <option value="frozen">Замороженные продукты</option>
+                        <option value="baby">Детское питание</option>
+                        <option value="healthy">Здоровое питание</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Цена:</label>
+                    <select id="price-filter" class="filter-select">
+                        <option value="all">Любая</option>
+                        <option value="0-100">До 100 руб.</option>
+                        <option value="100-500">100-500 руб.</option>
+                        <option value="500-1000">500-1000 руб.</option>
+                        <option value="1000-5000">1000-5000 руб.</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-filter">Сортировка:</label>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="default">По умолчанию</option>
+                        <option value="price-asc">Цена по возрастанию</option>
+                        <option value="price-desc">Цена по убыванию</option>
+                        <option value="name-asc">Название А-Я</option>
+                        <option value="name-desc">Название Я-А</option>
+                    </select>
+                </div>
+                <button id="reset-filters" class="btn btn-secondary">Сбросить фильтры</button>
+            </div>
+            <div id="products-container" class="products-grid">
+                <div class="product-card" data-category="ready-food" data-price="450">
+                    <div class="product-image">
+                        <img src="img/1.png" alt="Салат Цезарь">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Ресторанный дворик</div>
+                        <h3 class="product-title">Салат Цезарь с курицей</h3>
+                        <div class="product-details">Свежий салат с курицей, 350 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.2 (42)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">450 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="1">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="1">i</button>
+                                <button class="fav-btn" data-id="1">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="320">
+                    <div class="product-image">
+                        <img src="img/2.png" alt="Пельмени">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Цезарь</div>
+                        <h3 class="product-title">Пельмени говяжьи</h3>
+                        <div class="product-details">Домашние пельмени, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.8 (67)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">320 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="2">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="2">i</button>
+                                <button class="fav-btn" data-id="2">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="280">
+                    <div class="product-image">
+                        <img src="img/3.png" alt="Суп">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Домашняя кухня</div>
+                        <h3 class="product-title">Борщ украинский</h3>
+                        <div class="product-details">Наваристый борщ, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (53)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">280 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="3">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="3">i</button>
+                                <button class="fav-btn" data-id="3">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="390">
+                    <div class="product-image">
+                        <img src="img/4.png" alt="Лазанья">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Итальянская</div>
+                        <h3 class="product-title">Лазанья с мясом</h3>
+                        <div class="product-details">Итальянская лазанья, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (38)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">390 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="4">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="4">i</button>
+                                <button class="fav-btn" data-id="4">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="520">
+                    <div class="product-image">
+                        <img src="img/5.png" alt="Суши">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Tokyo Express</div>
+                        <h3 class="product-title">Суши сет Калифорния</h3>
+                        <div class="product-details">20 шт. роллов Калифорния</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (124)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">520 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="5">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="5">i</button>
+                                <button class="fav-btn" data-id="5">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="270">
+                    <div class="product-image">
+                        <img src="img/6.png" alt="Пицца">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Zotman pizza</div>
+                        <h3 class="product-title">Пицца Маргарита</h3>
+                        <div class="product-details">Классическая пицца, 30 см</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (89)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">270 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="6">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="6">i</button>
+                                <button class="fav-btn" data-id="6">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="510">
+                    <div class="product-image">
+                        <img src="img/7.png" alt="Куриные крылышки">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">BBQ Master</div>
+                        <h3 class="product-title">Крылышки BBQ</h3>
+                        <div class="product-details">Куриные крылышки в соусе, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (71)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">510 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="7">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="7">i</button>
+                                <button class="fav-btn" data-id="7">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="ready-food" data-price="240">
+                    <div class="product-image">
+                        <img src="img/8.png" alt="Голубцы">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Готовая еда</span>
+                        <div class="product-brand">Домашние</div>
+                        <h3 class="product-title">Голубцы с мясом</h3>
+                        <div class="product-details">Домашние голубцы, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (45)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">240 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="8">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="8">i</button>
+                                <button class="fav-btn" data-id="8">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="sweets" data-price="250">
+                    <div class="product-image">
+                        <img src="img/9.png" alt="Шоколад">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Алёнка</div>
+                        <h3 class="product-title">Шоколад молочный</h3>
+                        <div class="product-details">Шоколад, 100 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (89)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">250 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="9">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="9">i</button>
+                                <button class="fav-btn" data-id="9">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="sweets" data-price="1200">
+                    <div class="product-image">
+                        <img src="img/10.png" alt="Торт">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Вкусный дом</div>
+                        <h3 class="product-title">Торт Наполеон</h3>
+                        <div class="product-details">Классический торт, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.8 (156)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">1200 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="10">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="10">i</button>
+                                <button class="fav-btn" data-id="10">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="sweets" data-price="500">
+                    <div class="product-image">
+                        <img src="img/11.png" alt="Конфеты">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Красный Октябрь</div>
+                        <h3 class="product-title">Конфеты Ассорти</h3>
+                        <div class="product-details">Шоколадные конфеты, 250 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (92)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">500 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="11">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="11">i</button>
+                                <button class="fav-btn" data-id="11">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sweets" data-price="180">
+                    <div class="product-image">
+                        <img src="img/12.png" alt="Эклер">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Пирожковая</div>
+                        <h3 class="product-title">Пирожное Эклер</h3>
+                        <div class="product-details">С заварным кремом, 2 шт.</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (67)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="12">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="12">i</button>
+                                <button class="fav-btn" data-id="12">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sweets" data-price="95">
+                    <div class="product-image">
+                        <img src="img/14.png" alt="Зефир">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Шармэль</div>
+                        <h3 class="product-title">Зефир белый</h3>
+                        <div class="product-details">Ванильный зефир, 200 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (54)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">95 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="13">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="13">i</button>
+                                <button class="fav-btn" data-id="13">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sweets" data-price="110">
+                    <div class="product-image">
+                        <img src="img/15.png" alt="Мармелад">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Fruittella</div>
+                        <h3 class="product-title">Мармелад фруктовый</h3>
+                        <div class="product-details">Жевательный мармелад, 150 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.2 (48)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">110 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="14">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="14">i</button>
+                                <button class="fav-btn" data-id="14">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sweets" data-price="75">
+                    <div class="product-image">
+                        <img src="img/16.png" alt="Пряники">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Тульские</div>
+                        <h3 class="product-title">Пряник с варёной сгущёнкой</h3>
+                        <div class="product-details">Ароматный пряник, 300 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (83)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">75 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="15">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="15">i</button>
+                                <button class="fav-btn" data-id="15">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sweets" data-price="140">
+                    <div class="product-image">
+                        <img src="img/17.png" alt="Вафли">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сладости и десерты</span>
+                        <div class="product-brand">Artek</div>
+                        <h3 class="product-title">Вафли с шоколадом</h3>
+                        <div class="product-details">Хрустящие вафли, 200 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (61)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">140 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="16">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="16">i</button>
+                                <button class="fav-btn" data-id="16">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="vegetables" data-price="180">
+                    <div class="product-image">
+                        <img src="img/18.png" alt="Яблоки">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Фермерские</div>
+                        <h3 class="product-title">Яблоки Голден</h3>
+                        <div class="product-details">Свежие яблоки, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (56)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="17">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="17">i</button>
+                                <button class="fav-btn" data-id="17">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="90">
+                    <div class="product-image">
+                        <img src="img/19.png" alt="Бананы">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Эквадор</div>
+                        <h3 class="product-title">Бананы</h3>
+                        <div class="product-details">Спелые бананы, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (78)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">90 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="18">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="18">i</button>
+                                <button class="fav-btn" data-id="18">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="320">
+                    <div class="product-image">
+                        <img src="img/20.png" alt="Клубника">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Краснодарский край</div>
+                        <h3 class="product-title">Клубника свежая</h3>
+                        <div class="product-details">Свежая клубника, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (112)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">320 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="19">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="19">i</button>
+                                <button class="fav-btn" data-id="19">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="200">
+                    <div class="product-image">
+                        <img src="img/21.png" alt="Помидоры">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Азербайджан</div>
+                        <h3 class="product-title">Помидоры черри</h3>
+                        <div class="product-details">Сладкие помидоры, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (49)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">200 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="20">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="20">i</button>
+                                <button class="fav-btn" data-id="20">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="55">
+                    <div class="product-image">
+                        <img src="img/22.png" alt="Огурцы">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Тепличные</div>
+                        <h3 class="product-title">Огурцы грунтовые</h3>
+                        <div class="product-details">Свежие огурцы, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.2 (43)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">55 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="21">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="21">i</button>
+                                <button class="fav-btn" data-id="21">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="45">
+                    <div class="product-image">
+                        <img src="img/23.png" alt="Картофель">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Беларусь</div>
+                        <h3 class="product-title">Картофель молодой</h3>
+                        <div class="product-details">Молодой картофель, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (67)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">45 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="22">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="22">i</button>
+                                <button class="fav-btn" data-id="22">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="120">
+                    <div class="product-image">
+                        <img src="img/24.png" alt="Морковь">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Органическая</div>
+                        <h3 class="product-title">Морковь свежая</h3>
+                        <div class="product-details">Сладкая морковь, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (38)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="23">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="23">i</button>
+                                <button class="fav-btn" data-id="23">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="95">
+                    <div class="product-image">
+                        <img src="img/25.png" alt="Лук">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Репчатый</div>
+                        <h3 class="product-title">Лук репчатый</h3>
+                        <div class="product-details">Золотистый лук, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.1 (29)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">95 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="24">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="24">i</button>
+                                <button class="fav-btn" data-id="24">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="180">
+                    <div class="product-image">
+                        <img src="img/26.png" alt="Брокколи">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Свежий урожай</div>
+                        <h3 class="product-title">Брокколи</h3>
+                        <div class="product-details">Свежая брокколи, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (41)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="25">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="25">i</button>
+                                <button class="fav-btn" data-id="25">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="40">
+                    <div class="product-image">
+                        <img src="img/27.png" alt="Укроп">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Свежая зелень</div>
+                        <h3 class="product-title">Зелень укропа</h3>
+                        <div class="product-details">Свежий укроп, 100 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (58)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">40 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="26">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="26">i</button>
+                                <button class="fav-btn" data-id="26">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="50">
+                    <div class="product-image">
+                        <img src="img/28.png" alt="Петрушка">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Свежая зелень</div>
+                        <h3 class="product-title">Петрушка кудрявая</h3>
+                        <div class="product-details">Свежая петрушка, 100 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (52)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">50 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="27">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="27">i</button>
+                                <button class="fav-btn" data-id="27">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="280">
+                    <div class="product-image">
+                        <img src="img/29.png" alt="Авокадо">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Перу</div>
+                        <h3 class="product-title">Авокадо Хасс</h3>
+                        <div class="product-details">Спелые авокадо, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (46)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">280 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="28">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="28">i</button>
+                                <button class="fav-btn" data-id="28">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetables" data-price="210">
+                    <div class="product-image">
+                        <img src="img/30.png" alt="Виноград">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Овощи, фрукты, ягоды и зелень</span>
+                        <div class="product-brand">Молдова</div>
+                        <h3 class="product-title">Виноград Кишмиш</h3>
+                        <div class="product-details">Сладкий виноград, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.8 (89)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">210 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="29">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="29">i</button>
+                                <button class="fav-btn" data-id="29">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="meat" data-price="650">
+                    <div class="product-image">
+                        <img src="img/31.png" alt="Курица">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Петелинка</div>
+                        <h3 class="product-title">Курица охлажденная</h3>
+                        <div class="product-details">Целая курица, 1.5 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (34)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">650 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="30">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="30">i</button>
+                                <button class="fav-btn" data-id="30">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meat" data-price="890">
+                    <div class="product-image">
+                        <img src="img/32.png" alt="Говядина">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Мираторг</div>
+                        <h3 class="product-title">Говядина вырезка</h3>
+                        <div class="product-details">Свежая говядина, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (42)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">890 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="31">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="31">i</button>
+                                <button class="fav-btn" data-id="31">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meat" data-price="750">
+                    <div class="product-image">
+                        <img src="img/33.png" alt="Свинина">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Черкизово</div>
+                        <h3 class="product-title">Свинина лопатка</h3>
+                        <div class="product-details">Свежая свинина, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (38)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">750 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="32">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="32">i</button>
+                                <button class="fav-btn" data-id="32">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meat" data-price="280">
+                    <div class="product-image">
+                        <img src="img/34.png" alt="Фарш">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Мясной ряд</div>
+                        <h3 class="product-title">Фарш говяжий</h3>
+                        <div class="product-details">Свежий фарш, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (51)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">280 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="33">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="33">i</button>
+                                <button class="fav-btn" data-id="33">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meat" data-price="320">
+                    <div class="product-image">
+                        <img src="img/35.png" alt="Колбаса">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Царь-мясо</div>
+                        <h3 class="product-title">Колбаса докторская</h3>
+                        <div class="product-details">Вареная колбаса, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (47)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">320 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="34">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="34">i</button>
+                                <button class="fav-btn" data-id="34">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meat" data-price="450">
+                    <div class="product-image">
+                        <img src="img/36.png" alt="Бекон">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Свинокомплекс</div>
+                        <h3 class="product-title">Бекон копченый</h3>
+                        <div class="product-details">Копченый бекон, 300 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.8 (63)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">450 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="35">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="35">i</button>
+                                <button class="fav-btn" data-id="35">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meat" data-price="180">
+                    <div class="product-image">
+                        <img src="img/37.png" alt="Сосиски">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Мясо, птица</span>
+                        <div class="product-brand">Микоян</div>
+                        <h3 class="product-title">Сосиски молочные</h3>
+                        <div class="product-details">Детские сосиски, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (58)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="36">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="36">i</button>
+                                <button class="fav-btn" data-id="36">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="dairy" data-price="95">
+                    <div class="product-image">
+                        <img src="img/38.png" alt="Молоко">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Простоквашино</div>
+                        <h3 class="product-title">Молоко 3.2%</h3>
+                        <div class="product-details">Пастеризованное, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (120)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">95 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="37">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="37">i</button>
+                                <button class="fav-btn" data-id="37">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="420">
+                    <div class="product-image">
+                        <img src="img/39.png" alt="Сыр">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Гауда</div>
+                        <h3 class="product-title">Сыр Гауда</h3>
+                        <div class="product-details">Голландский сыр, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (86)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">420 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="38">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="38">i</button>
+                                <button class="fav-btn" data-id="38">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="85">
+                    <div class="product-image">
+                        <img src="img/40.png" alt="Йогурт">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Активиа</div>
+                        <h3 class="product-title">Йогурт греческий</h3>
+                        <div class="product-details">Натуральный йогурт, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (73)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">85 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="39">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="39">i</button>
+                                <button class="fav-btn" data-id="39">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="120">
+                    <div class="product-image">
+                        <img src="img/41.png" alt="Творог">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Домик в деревне</div>
+                        <h3 class="product-title">Творог 5%</h3>
+                        <div class="product-details">Обезжиренный творог, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (64)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="40">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="40">i</button>
+                                <button class="fav-btn" data-id="40">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="75">
+                    <div class="product-image">
+                        <img src="img/42.png" alt="Сметана">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Вкуснотеево</div>
+                        <h3 class="product-title">Сметана 15%</h3>
+                        <div class="product-details">Домашняя сметана, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (57)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">75 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="41">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="41">i</button>
+                                <button class="fav-btn" data-id="41">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="80">
+                    <div class="product-image">
+                        <img src="img/43.png" alt="Кефир">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Чабан</div>
+                        <h3 class="product-title">Кефир 2.5%</h3>
+                        <div class="product-details">Биокефир, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (49)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">80 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="42">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="42">i</button>
+                                <button class="fav-btn" data-id="42">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="220">
+                    <div class="product-image">
+                        <img src="img/44.png" alt="Масло">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Вкуснотеево</div>
+                        <h3 class="product-title">Масло сливочное</h3>
+                        <div class="product-details">82.5% жирности, 200 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (71)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">220 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="43">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="43">i</button>
+                                <button class="fav-btn" data-id="43">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="160">
+                    <div class="product-image">
+                        <img src="img/45.png" alt="Сливки">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Пармалат</div>
+                        <h3 class="product-title">Сливки 23%</h3>
+                        <div class="product-details">Для взбивания, 500 мл</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (53)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">160 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="44">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="44">i</button>
+                                <button class="fav-btn" data-id="44">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="90">
+                    <div class="product-image">
+                        <img src="img/46.png" alt="Ряженка">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, ягоды</span>
+                        <div class="product-brand">Вкуснотеево</div>
+                        <h3 class="product-title">Ряженка</h3>
+                        <div class="product-details">Традиционная ряженка, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (68)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">90 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="45">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="45">i</button>
+                                <button class="fav-btn" data-id="45">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy" data-price="120">
+                    <div class="product-image">
+                        <img src="img/47.png" alt="Яйца">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Молочные продукты, яйца</span>
+                        <div class="product-brand">Роскар</div>
+                        <h3 class="product-title">Яйца куриные С0</h3>
+                        <div class="product-details">Отборные яйца, 10 шт.</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.8 (92)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="46">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="46">i</button>
+                                <button class="fav-btn" data-id="46">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="bakery" data-price="65">
+                    <div class="product-image">
+                        <img src="img/48.png" alt="Хлеб">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Хлеб и выпечка</span>
+                        <div class="product-brand">Хлебный дом</div>
+                        <h3 class="product-title">Хлеб Бородинский</h3>
+                        <div class="product-details">Ржаной хлеб, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (78)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">65 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="47">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="47">i</button>
+                                <button class="fav-btn" data-id="47">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bakery" data-price="45">
+                    <div class="product-image">
+                        <img src="img/49.png" alt="Батон">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Хлеб и выпечка</span>
+                        <div class="product-brand">Каравай</div>
+                        <h3 class="product-title">Батон нарезной</h3>
+                        <div class="product-details">Пшеничный батон, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (62)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">45 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="48">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="48">i</button>
+                                <button class="fav-btn" data-id="48">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bakery" data-price="85">
+                    <div class="product-image">
+                        <img src="img/50.png" alt="Булочки">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Хлеб и выпечка</span>
+                        <div class="product-brand">Пекарня</div>
+                        <h3 class="product-title">Булочки сдобные</h3>
+                        <div class="product-details">Сахарные булочки, 2 шт.</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (71)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">85 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="49">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="49">i</button>
+                                <button class="fav-btn" data-id="49">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bakery" data-price="120">
+                    <div class="product-image">
+                        <img src="img/51.png" alt="Круассан">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Хлеб и выпечка</span>
+                        <div class="product-brand">French Bakery</div>
+                        <h3 class="product-title">Круассан с шоколадом</h3>
+                        <div class="product-details">Слоеный круассан, 150 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (94)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="50">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="50">i</button>
+                                <button class="fav-btn" data-id="50">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bakery" data-price="75">
+                    <div class="product-image">
+                        <img src="img/52.png" alt="Пончики">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Хлеб и выпечка</span>
+                        <div class="product-brand">Криспи Крим</div>
+                        <h3 class="product-title">Пончики глазированные</h3>
+                        <div class="product-details">С сахарной глазурью, 4 шт.</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (83)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">75 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="51">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="51">i</button>
+                                <button class="fav-btn" data-id="51">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bakery" data-price="280">
+                    <div class="product-image">
+                        <img src="img/53.png" alt="Пирог">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Хлеб и выпечка</span>
+                        <div class="product-brand">Домашний</div>
+                        <h3 class="product-title">Пирог с яблоками</h3>
+                        <div class="product-details">Домашний пирог, 800 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.8 (67)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">280 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="52">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="52">i</button>
+                                <button class="fav-btn" data-id="52">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="fish" data-price="1200">
+                    <div class="product-image">
+                        <img src="img/54.png" alt="Лосось">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Рыба и морепродукты</span>
+                        <div class="product-brand">Норвегия</div>
+                        <h3 class="product-title">Лосось свежий</h3>
+                        <div class="product-details">Филе лосося, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (105)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">1200 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="53">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="53">i</button>
+                                <button class="fav-btn" data-id="53">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fish" data-price="950">
+                    <div class="product-image">
+                        <img src="img/55.png" alt="Форель">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Рыба и морепродукты</span>
+                        <div class="product-brand">Русское море</div>
+                        <h3 class="product-title">Форель радужная</h3>
+                        <div class="product-details">Свежая форель, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (78)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">950 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="54">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="54">i</button>
+                                <button class="fav-btn" data-id="54">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fish" data-price="850">
+                    <div class="product-image">
+                        <img src="img/56.png" alt="Креветки">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Рыба и морепродукты</span>
+                        <div class="product-brand">Вкус моря</div>
+                        <h3 class="product-title">Креветки тигровые</h3>
+                        <div class="product-details">Очищенные креветки, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (64)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">850 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="55">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="55">i</button>
+                                <button class="fav-btn" data-id="55">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fish" data-price="420">
+                    <div class="product-image">
+                        <img src="img/57.png" alt="Кальмар">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Рыба и морепродукты</span>
+                        <div class="product-brand">Океан</div>
+                        <h3 class="product-title">Кальмар замороженный</h3>
+                        <div class="product-details">Тушки кальмара, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (52)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">420 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="56">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="56">i</button>
+                                <button class="fav-btn" data-id="56">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fish" data-price="180">
+                    <div class="product-image">
+                        <img src="img/58.png" alt="Сельдь">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Рыба и морепродукты</span>
+                        <div class="product-brand">Исландия</div>
+                        <h3 class="product-title">Сельдь соленая</h3>
+                        <div class="product-details">Филе сельди, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (59)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="57">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="57">i</button>
+                                <button class="fav-btn" data-id="57">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="beverages" data-price="120">
+                    <div class="product-image">
+                        <img src="img/59.png" alt="Сок">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Добрый</div>
+                        <h3 class="product-title">Сок апельсиновый</h3>
+                        <div class="product-details">100% сок, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (82)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="58">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="58">i</button>
+                                <button class="fav-btn" data-id="58">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="65">
+                    <div class="product-image">
+                        <img src="img/60.png" alt="Вода">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Псыж</div>
+                        <h3 class="product-title">Вода минеральная</h3>
+                        <div class="product-details">Газированная вода, 1.5 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (71)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">65 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="59">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="59">i</button>
+                                <button class="fav-btn" data-id="59">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="180">
+                    <div class="product-image">
+                        <img src="img/61.png" alt="Чай">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Greenfield</div>
+                        <h3 class="product-title">Чай черный</h3>
+                        <div class="product-details">Цейлонский чай, 100 пакетиков</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (94)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="60">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="60">i</button>
+                                <button class="fav-btn" data-id="60">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="350">
+                    <div class="product-image">
+                        <img src="img/62.png" alt="Кофе">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Нескафе Голд</div>
+                        <h3 class="product-title">Кофе молотый</h3>
+                        <div class="product-details">Арабика 100%, 250 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (112)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">350 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="61">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="61">i</button>
+                                <button class="fav-btn" data-id="61">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="95">
+                    <div class="product-image">
+                        <img src="img/63.png" alt="Лимонад">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Черноголовка</div>
+                        <h3 class="product-title">Лимонад натуральный</h3>
+                        <div class="product-details">Газированный лимонад, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (68)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">95 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="62">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="62">i</button>
+                                <button class="fav-btn" data-id="62">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="110">
+                    <div class="product-image">
+                        <img src="img/64.png" alt="Морс">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Сады Придонья</div>
+                        <h3 class="product-title">Морс клюквенный</h3>
+                        <div class="product-details">Натуральный морс, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (76)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">110 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="63">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="63">i</button>
+                                <button class="fav-btn" data-id="63">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="150">
+                    <div class="product-image">
+                        <img src="img/65.png" alt="Квас">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Царские припасы</div>
+                        <h3 class="product-title">Квас хлебный</h3>
+                        <div class="product-details">Натуральный квас, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (89)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">150 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="64">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="64">i</button>
+                                <button class="fav-btn" data-id="64">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="beverages" data-price="85">
+                    <div class="product-image">
+                        <img src="img/66.png" alt="Энергетик">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Напитки</span>
+                        <div class="product-brand">Adrenaline Rush</div>
+                        <h3 class="product-title">Энергетик</h3>
+                        <div class="product-details">Без сахара, 0.5 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.2 (54)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">85 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="65">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="65">i</button>
+                                <button class="fav-btn" data-id="65">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="grocery" data-price="95">
+                    <div class="product-image">
+                        <img src="img/67.png" alt="Рис">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Мистраль</div>
+                        <h3 class="product-title">Рис басмати</h3>
+                        <div class="product-details">Длиннозерный рис, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (87)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">95 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="66">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="66">i</button>
+                                <button class="fav-btn" data-id="66">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="85">
+                    <div class="product-image">
+                        <img src="img/68.png" alt="Гречка">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Мистраль</div>
+                        <h3 class="product-title">Гречка ядрица</h3>
+                        <div class="product-details">Отборная гречка, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (92)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">85 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="67">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="67">i</button>
+                                <button class="fav-btn" data-id="67">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="65">
+                    <div class="product-image">
+                        <img src="img/69.png" alt="Макароны">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Barilla</div>
+                        <h3 class="product-title">Макароны спагетти</h3>
+                        <div class="product-details">Твердые сорта, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (73)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">65 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="68">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="68">i</button>
+                                <button class="fav-btn" data-id="68">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="75">
+                    <div class="product-image">
+                        <img src="img/70.png" alt="Фасоль">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Бондюэль</div>
+                        <h3 class="product-title">Фасоль консервированная</h3>
+                        <div class="product-details">В томатном соусе, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (58)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">75 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="69">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="69">i</button>
+                                <button class="fav-btn" data-id="69">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="55">
+                    <div class="product-image">
+                        <img src="img/71.png" alt="Овсянка">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Nordic</div>
+                        <h3 class="product-title">Овсяные хлопья</h3>
+                        <div class="product-details">Быстрого приготовления, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (81)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">55 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="70">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="70">i</button>
+                                <button class="fav-btn" data-id="70">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="45">
+                    <div class="product-image">
+                        <img src="img/72.png" alt="Мука">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Макфа</div>
+                        <h3 class="product-title">Мука пшеничная</h3>
+                        <div class="product-details">Высший сорт, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (69)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">45 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="71">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="71">i</button>
+                                <button class="fav-btn" data-id="71">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="65">
+                    <div class="product-image">
+                        <img src="img/73.png" alt="Сахар">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Русский сахар</div>
+                        <h3 class="product-title">Сахар песок</h3>
+                        <div class="product-details">Белый сахар, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.2 (62)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">65 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="72">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="72">i</button>
+                                <button class="fav-btn" data-id="72">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="25">
+                    <div class="product-image">
+                        <img src="img/74.png" alt="Соль">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Морская</div>
+                        <h3 class="product-title">Соль йодированная</h3>
+                        <div class="product-details">Мелкая соль, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (57)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">25 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="73">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="73">i</button>
+                                <button class="fav-btn" data-id="73">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="110">
+                    <div class="product-image">
+                        <img src="img/75.png" alt="Масло">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Altero</div>
+                        <h3 class="product-title">Масло подсолнечное</h3>
+                        <div class="product-details">Рафинированное, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (74)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">110 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="74">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="74">i</button>
+                                <button class="fav-btn" data-id="74">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="55">
+                    <div class="product-image">
+                        <img src="img/76.png" alt="Томатная паста">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Помидорка</div>
+                        <h3 class="product-title">Томатная паста</h3>
+                        <div class="product-details">30% томатов, 200 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (63)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">55 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="75">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="75">i</button>
+                                <button class="fav-btn" data-id="75">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="180">
+                    <div class="product-image">
+                        <img src="img/77.png" alt="Мед">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Башкирский</div>
+                        <h3 class="product-title">Мед цветочный</h3>
+                        <div class="product-details">Натуральный мед, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (98)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="76">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="76">i</button>
+                                <button class="fav-btn" data-id="76">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="95">
+                    <div class="product-image">
+                        <img src="img/78.png" alt="Уксус">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Столовый</div>
+                        <h3 class="product-title">Уксус яблочный</h3>
+                        <div class="product-details">6% уксус, 500 мл</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (47)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">95 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="77">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="77">i</button>
+                                <button class="fav-btn" data-id="77">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="120">
+                    <div class="product-image">
+                        <img src="img/79.png" alt="Горчица">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Махеевъ</div>
+                        <h3 class="product-title">Горчица столовая</h3>
+                        <div class="product-details">Острая горчица, 200 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (61)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="78">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="78">i</button>
+                                <button class="fav-btn" data-id="78">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grocery" data-price="85">
+                    <div class="product-image">
+                        <img src="img/80.png" alt="Майонез">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Бакалея</span>
+                        <div class="product-brand">Московский</div>
+                        <h3 class="product-title">Майонез Провансаль</h3>
+                        <div class="product-details">67% жирности, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (79)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">85 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="79">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="79">i</button>
+                                <button class="fav-btn" data-id="79">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="frozen" data-price="320">
+                    <div class="product-image">
+                        <img src="img/81.png" alt="Замороженные пельмени">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">Сибирская коллекция</div>
+                        <h3 class="product-title">Пельмени замороженные</h3>
+                        <div class="product-details">Говяжьи пельмени, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (68)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">320 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="80">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="80">i</button>
+                                <button class="fav-btn" data-id="80">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="180">
+                    <div class="product-image">
+                        <img src="img/82.png" alt="Овощная смесь">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">4 сезона</div>
+                        <h3 class="product-title">Овощная смесь</h3>
+                        <div class="product-details">Мексиканская смесь, 800 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (72)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="81">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="81">i</button>
+                                <button class="fav-btn" data-id="81">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="350">
+                    <div class="product-image">
+                        <img src="img/83.png" alt="Ягоды">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">Свой урожай</div>
+                        <h3 class="product-title">Ягоды ассорти</h3>
+                        <div class="product-details">Клубника, малина, смородина, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (65)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">350 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="82">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="82">i</button>
+                                <button class="fav-btn" data-id="82">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="280">
+                    <div class="product-image">
+                        <img src="img/84.png" alt="Блинчики">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">С пылу С жару</div>
+                        <h3 class="product-title">Блинчики с мясом</h3>
+                        <div class="product-details">Замороженные блинчики, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (59)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">280 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="83">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="83">i</button>
+                                <button class="fav-btn" data-id="83">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="420">
+                    <div class="product-image">
+                        <img src="img/85.png" alt="Пицца">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">Zotman</div>
+                        <h3 class="product-title">Пицца замороженная</h3>
+                        <div class="product-details">Пицца Пепперони, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (76)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">420 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="84">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="84">i</button>
+                                <button class="fav-btn" data-id="84">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="190">
+                    <div class="product-image">
+                        <img src="img/86.png" alt="Картофель фри">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">Макси</div>
+                        <h3 class="product-title">Картофель фри</h3>
+                        <div class="product-details">Замороженный картофель, 1 кг</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.3 (63)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">190 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="85">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="85">i</button>
+                                <button class="fav-btn" data-id="85">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="650">
+                    <div class="product-image">
+                        <img src="img/87.png" alt="Креветки">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">Королевские</div>
+                        <h3 class="product-title">Креветки королевские</h3>
+                        <div class="product-details">Замороженные креветки, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (81)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">650 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="86">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="86">i</button>
+                                <button class="fav-btn" data-id="86">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen" data-price="320">
+                    <div class="product-image">
+                        <img src="img/88.png" alt="Тесто">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Замороженные продукты</span>
+                        <div class="product-brand">Хлебный дом</div>
+                        <h3 class="product-title">Тесто слоеное</h3>
+                        <div class="product-details">Замороженное тесто, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (67)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">320 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="87">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="87">i</button>
+                                <button class="fav-btn" data-id="87">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="baby" data-price="85">
+                    <div class="product-image">
+                        <img src="img/89.png" alt="Пюре">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Детское питание</span>
+                        <div class="product-brand">Агуша</div>
+                        <h3 class="product-title">Пюре яблочное</h3>
+                        <div class="product-details">Для детей с 4 месяцев, 100 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (124)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">85 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="88">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="88">i</button>
+                                <button class="fav-btn" data-id="88">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="baby" data-price="120">
+                    <div class="product-image">
+                        <img src="img/90.png" alt="Каша">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Детское питание</span>
+                        <div class="product-brand">Агуша</div>
+                        <h3 class="product-title">Каша молочная</h3>
+                        <div class="product-details">Рисовая каша, 200 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (98)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">120 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="89">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="89">i</button>
+                                <button class="fav-btn" data-id="89">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="baby" data-price="950">
+                    <div class="product-image">
+                        <img src="img/91.png" alt="Смесь">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Детское питание</span>
+                        <div class="product-brand">Nutrilon</div>
+                        <h3 class="product-title">Смесь питательная</h3>
+                        <div class="product-details">Для детей 0-6 месяцев, 800 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-count">4.9 (156)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">950 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="90">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="90">i</button>
+                                <button class="fav-btn" data-id="90">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="baby" data-price="75">
+                    <div class="product-image">
+                        <img src="img/92.png" alt="Печенье">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Детское питание</span>
+                        <div class="product-brand">Фрутоняня</div>
+                        <h3 class="product-title">Печенье детское</h3>
+                        <div class="product-details">Для прорезывания зубов, 180 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (87)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">75 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="91">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="91">i</button>
+                                <button class="fav-btn" data-id="91">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="baby" data-price="65">
+                    <div class="product-image">
+                        <img src="img/93.png" alt="Сок детский">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Детское питание</span>
+                        <div class="product-brand">Фрутоняня</div>
+                        <h3 class="product-title">Сок детский</h3>
+                        <div class="product-details">Яблочный сок, 200 мл</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (79)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">65 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="92">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="92">i</button>
+                                <button class="fav-btn" data-id="92">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="healthy" data-price="180">
+                    <div class="product-image">
+                        <img src="img/94.png" alt="Безглютеновый хлеб">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">ВВ</div>
+                        <h3 class="product-title">Хлеб безглютеновый</h3>
+                        <div class="product-details">Рисовый хлеб, 300 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (73)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="93">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="93">i</button>
+                                <button class="fav-btn" data-id="93">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="220">
+                    <div class="product-image">
+                        <img src="img/95.png" alt="Миндальное молоко">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">Planto</div>
+                        <h3 class="product-title">Молоко миндальное</h3>
+                        <div class="product-details">Без лактозы, 1 л</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (68)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">220 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="94">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="94">i</button>
+                                <button class="fav-btn" data-id="94">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="190">
+                    <div class="product-image">
+                        <img src="img/96.png" alt="Паста из нута">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">ВВ</div>
+                        <h3 class="product-title">Паста из нута</h3>
+                        <div class="product-details">Хумус классический, 300 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.7 (81)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">190 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="95">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="95">i</button>
+                                <button class="fav-btn" data-id="95">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="150">
+                    <div class="product-image">
+                        <img src="img/97.png" alt="Протеиновый батончик">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">FitKit</div>
+                        <h3 class="product-title">Батончики протеиновые</h3>
+                        <div class="product-details">Шоколадные батончики, 5 шт.</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (65)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">150 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="96">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="96">i</button>
+                                <button class="fav-btn" data-id="96">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="320">
+                    <div class="product-image">
+                        <img src="img/13.png" alt="Ореховая смесь">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">Ореховая ферма</div>
+                        <h3 class="product-title">Смесь ореховая</h3>
+                        <div class="product-details">5 видов орехов, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.8 (92)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">320 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="97">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="97">i</button>
+                                <button class="fav-btn" data-id="97">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="450">
+                    <div class="product-image">
+                        <img src="img/98.png" alt="Кокосовое масло">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">BioLife</div>
+                        <h3 class="product-title">Масло кокосовое</h3>
+                        <div class="product-details">Органическое масло, 500 мл</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.6 (74)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">450 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="98">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="98">i</button>
+                                <button class="fav-btn" data-id="98">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="280">
+                    <div class="product-image">
+                        <img src="img/99.png" alt="Семена чиа">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">Superfood</div>
+                        <h3 class="product-title">Семена чиа</h3>
+                        <div class="product-details">Органические семена, 500 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.5 (69)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">280 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="99">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="99">i</button>
+                                <button class="fav-btn" data-id="99">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="healthy" data-price="180">
+                    <div class="product-image">
+                        <img src="img/100.png" alt="Тофу">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Здоровое питание</span>
+                        <div class="product-brand">ВВ</div>
+                        <h3 class="product-title">Тофу соевый</h3>
+                        <div class="product-details">Соевый творог, 400 г</div>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★☆</span>
+                            <span class="rating-count">4.4 (58)</span>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">180 руб.</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary add-to-cart" data-id="100">В корзину</button>
+                                <button class="btn btn-secondary btn-details" data-id="100">i</button>
+                                <button class="fav-btn" data-id="100">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button id="first-page" class="pagination-btn" title="Первая страница">
+                    <i class="fas fa-angle-double-left"></i>
+                </button>
+                <button id="prev-page" class="pagination-btn" title="Предыдущая страница">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span id="page-info">Страница 1 из 9</span>
+                <button id="next-page" class="pagination-btn" title="Следующая страница">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button id="last-page" class="pagination-btn" title="Последняя страница">
+                    <i class="fas fa-angle-double-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>FreshMarket</h3>
+                    <p>Свежие продукты с доставкой на дом. Качество, которое вы заслуживаете.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Меню</h3>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="index.html#about-section">О нас</a>
+                    <a href="index.html#delivery-section">Доставка</a>
+                    <a href="index.html#contacts-section">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Помощь</h3>
+                    <a href="#">Частые вопросы</a>
+                    <a href="#">Возврат товара</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Конфиденциальность</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Продовольственная, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@freshmarket.ru</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 8:00-22:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMarket. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <script src="catalog.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Мобильное меню
+            document.querySelector('.menu-toggle').addEventListener('click', function() {
+                document.querySelector('.nav').classList.toggle('active');
+            });
+            
+            // Обновление счетчиков
+            updateCounters();
+        });
+    </script>
+</body>
+</html>
